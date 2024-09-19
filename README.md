@@ -18,7 +18,7 @@ Paste this code into a new iOS Scriptable script and edit 'Editable global decla
 
 #### Links
 - :link: [Scriptable](https://scriptable.app) (a big thanks to Simon Støvring)
-- :link: [NordVPN (referral link)](https://go.onelink.me/app/c7c915fc)
+- :link: [NordVPN (referral link)](https://go.nordvpn.net/aff_c?offer_id=15&aff_id=109996&url_id=858)
 - :link: [NordVPN API](https://nordvpn.com/wp-admin/admin-ajax.php?action=get_user_info_data)
 - :link: [IPinfo API](https://ipinfo.io/json)
 - :speech_balloon: [Discord server](https://discord.gg/ugpDCDmXdN)
