@@ -7,8 +7,8 @@
  */
 
 // Editable global declarations
-const api = 'nordvpn' // can be 'nordvpn' or 'ipinfo'
-const colorMode = 'light' // can be 'light' or 'dark'
+const api = 'ipinfo' // can be 'nordvpn' or 'ipinfo'
+const colorMode = 'matrix' // can be 'light' or 'dark' or 'matrix'
 
 // Global declarations
 const widget = new ListWidget()
@@ -64,20 +64,22 @@ async function createWidget(colorMode) {
 	widget.addSpacer(10)
 	
 	// Row 3 - VPN
-	let row3 = widget.addStack()
-	row3.layoutHorizontally()
-	let vpnLabel = row3.addText('VPN: ')
-	if (indexData.status == true) {
-		let vpn = row3.addText('yes')
-		vpn.textColor = new Color(textColor(colorMode))
-		vpn.font = Font.mediumRoundedSystemFont(14)
-	} else {
-		let vpn = row3.addText('no')
-		vpn.textColor = new Color(textColor(colorMode))
-		vpn.font = Font.mediumRoundedSystemFont(14)
+	if (api == 'nordvpn') {
+		let row3 = widget.addStack()
+		row3.layoutHorizontally()
+		let vpnLabel = row3.addText('VPN: ')
+		if (indexData.status == true) {
+			let vpn = row3.addText('yes')
+			vpn.textColor = new Color(textColor(colorMode))
+			vpn.font = Font.mediumRoundedSystemFont(14)
+		} else {
+			let vpn = row3.addText('no')
+			vpn.textColor = new Color(textColor(colorMode))
+			vpn.font = Font.mediumRoundedSystemFont(14)
+		}
+		vpnLabel.textColor = new Color(textColor(colorMode))
+		vpnLabel.font = Font.lightRoundedSystemFont(14)
 	}
-	vpnLabel.textColor = new Color(textColor(colorMode))
-	vpnLabel.font = Font.lightRoundedSystemFont(14)
 	
 	// Widget background color
 	if (indexData.status == true) {
@@ -94,6 +96,8 @@ function textColor(colorMode) {
 		return 'f2f2f2';
 	} else if (colorMode == 'light') {
 		return '191919';
+	} else if (colorMode == 'matrix') {
+		return '008529';
 	}
 }
 function backgroundColor(colorMode) {
@@ -101,6 +105,8 @@ function backgroundColor(colorMode) {
 		return '842029';
 	} else if (colorMode == 'light') {
 		return 'f1aeb5';
+	} else if (colorMode == 'matrix') {
+		return '030303';
 	}
 }
 function backgroundColorVPN(colorMode) {
@@ -108,6 +114,8 @@ function backgroundColorVPN(colorMode) {
 		return '0f5132';
 	} else if (colorMode == 'light') {
 		return 'a3cfbb';
+	} else if (colorMode == 'matrix') {
+		return '030303';
 	}
 }
 
